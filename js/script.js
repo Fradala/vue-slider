@@ -45,6 +45,30 @@ createApp({
    
 
     method: {
+        changeSlideTo(index) {
+            if (index >= this.image.length || index < 0){
+                return false;
+            }
+
+            this.activeIndex = index;
+        },
+
+        prevSlide(){
+            this.activeIndex--;
+            if (this.activeIndex >= this.image.length){
+                this.changeSlideTo(4)
+            }
+            this.changeSlideTo(this.activeIndex)
+
+        },
+
+        nextSlide(){
+            this.activeIndex++;
+            if (this.activeIndex >= this.image.length){
+                this.changeSlideTo(0)
+            }
+            this.changeSlideTo(this.activeIndex)
+        },
 
     },
 
