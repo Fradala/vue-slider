@@ -36,7 +36,9 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            activeIndex: 0;
+            activeIndex: 0,
+            slides: slides
+            
         }
     },
        
