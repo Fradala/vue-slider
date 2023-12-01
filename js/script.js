@@ -44,9 +44,9 @@ createApp({
        
    
 
-    method: {
+    methods: {
         changeSlideTo(index) {
-            if (index >= this.image.length || index < 0){
+            if (index >= this.slides.length || index < 0){
                 return false;
             }
 
@@ -55,7 +55,7 @@ createApp({
 
         prevSlide(){
             this.activeIndex--;
-            if (this.activeIndex >= this.image.length){
+            if (this.activeIndex < 0){
                 this.changeSlideTo(4)
             }
             this.changeSlideTo(this.activeIndex)
@@ -64,7 +64,7 @@ createApp({
 
         nextSlide(){
             this.activeIndex++;
-            if (this.activeIndex >= this.image.length){
+            if (this.activeIndex >= this.slides.length){
                 this.changeSlideTo(0)
             }
             this.changeSlideTo(this.activeIndex)
